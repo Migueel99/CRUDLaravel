@@ -1,0 +1,43 @@
+@extends('layouts.app')
+
+@section('template_title')
+    Mostrar Trabajador
+@endsection
+
+@section('content')
+    <section class="content container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="float-left">
+                            <span class="card-title">Mostrar {{ $trabajador->persona->nombre }}
+                                {{ $trabajador->persona->apellidos }}</span>
+                        </div>
+                        <div class="float-right">
+                            <a class="btn btn-primary" href="{{ route('trabajadors.index') }}"> {{ __('Back') }}</a>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="form-group">
+                            <strong>Persona Id:</strong>
+                            {{ $trabajador->persona_id }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Telefono:</strong>
+                            {{ $trabajador->telefono }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Nombre y Apellidos:</strong>
+                            {{ $trabajador->persona->nombre }}
+                            {{ $trabajador->persona->apellidos }}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+@endsection
